@@ -25,6 +25,8 @@
     "format:check": "biome format .",
     "check": "biome check .",
     "check:fix": "biome check --write .",
+    "check:versions": "node ./scripts/check-versions.js",
+    "sync:versions": "node ./scripts/sync-versions.js",
     "release": "node ./scripts/release.js"
   },
   "packageManager": "pnpm@10.31.0",

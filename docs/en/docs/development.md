@@ -57,7 +57,6 @@ To build individual packages:
 ```sh [node]
 node ./scripts/build.ts tanstack-head-controller
 node ./scripts/build.ts thc-plugin-merge
-node ./scripts/build.ts thc-plugin-ttplate
 ```
 
 :::

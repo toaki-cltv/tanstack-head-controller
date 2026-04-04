@@ -28,7 +28,6 @@ Plugins implement a transform function:
 Built-in examples in this monorepo:
 
 - Merge duplicate-like metadata entries (`thc-plugin-merge`)
-- Apply a site-name template to page titles (`thc-plugin-ttplate`)
 
 ## Typical use cases
 

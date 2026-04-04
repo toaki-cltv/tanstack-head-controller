@@ -57,7 +57,6 @@ pnpm build
 ```sh [node]
 node ./scripts/build.ts tanstack-head-controller
 node ./scripts/build.ts thc-plugin-merge
-node ./scripts/build.ts thc-plugin-ttplate
 ```
 
 :::
@@ -66,7 +65,6 @@ node ./scripts/build.ts thc-plugin-ttplate
 
 - `packages/tanstack-head-controller`: コアライブラリ
 - `packages/thc-plugin-merge`: head 統合プラグイン
-- `packages/thc-plugin-ttplate`: title template プラグイン
 - `examples/tanstack-react`: 導入サンプル
 
 ## ドキュメント更新時の確認

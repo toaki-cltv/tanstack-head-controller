@@ -1,7 +1,7 @@
 {
   "name": "thc-plugin-merge",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Official merge plugin for tanstack-head-controller.",
   "homepage": "https://thc.tkcl.tv/en/docs/usage",
   "author": "toakiryu",

@@ -23,7 +23,6 @@ TanStack Head Controller は、TanStack Router のルート定義から head 情
 プラグインは変換関数（`transform`）を持ち、head と context を受け取って新しい head を返します。
 
 - 重複しやすいメタ情報を統合する（`thc-plugin-merge`）
-- タイトルにサイト名テンプレートを適用する（`thc-plugin-ttplate`）
 
 この仕組みにより、アプリ固有の SEO ポリシーや title ルールをライブラリ外で拡張できます。
 
