@@ -1,0 +1,54 @@
+{
+  "name": "tanstack-head-controller",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "author": "toakiryu",
+  "license": "Apache-2.0",
+  "funding": "https://buymeacoffee.com/toakiryu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toaki-cltv/tanstack-head-controller.git",
+    "directory": "packages/tanstack-head-controller"
+  },
+  "bugs": "https://github.com/toaki-cltv/tanstack-head-controller/issues",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./context": {
+      "types": "./dist/context/index.d.ts",
+      "import": "./dist/context/index.js"
+    },
+    "./configs": {
+      "types": "./dist/configs/index.d.ts",
+      "import": "./dist/configs/index.js"
+    },
+    "./plugins": {
+      "types": "./dist/plugins/index.d.ts",
+      "import": "./dist/plugins/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=22x"
+  },
+  "scripts": {
+    "build": "node ../../scripts/build.ts tanstack-head-controller",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "packageManager": "pnpm@10.31.0",
+  "dependencies": {
+    "@tanstack/react-router": "latest",
+    "react": "^19.2.0",
+    "tslog": "^4.10.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.0",
+    "@types/node": "^22.19.15",
+    "@types/react": "^19.2.0",
+    "typescript": "^5.9.3"
+  }
+}

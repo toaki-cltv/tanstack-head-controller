@@ -1,0 +1,5 @@
+import { headCtrlrContext } from "../context/type";
+
+export type THCcontextWithRouter<T> = T & {
+	headCtrlr: headCtrlrContext;
+};

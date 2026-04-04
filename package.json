@@ -1,0 +1,27 @@
+{
+  "name": "@repo/root",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "author": "toakiryu",
+  "license": "Apache-2.0",
+  "funding": "https://buymeacoffee.com/toakiryu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toaki-cltv/tanstack-head-controller.git"
+  },
+  "bugs": "https://github.com/toaki-cltv/tanstack-head-controller/issues",
+  "keywords": [],
+  "scripts": {
+    "build": "node ./scripts/build.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "packageManager": "pnpm@10.31.0",
+  "devDependencies": {
+    "@biomejs/biome": "2.4.0",
+    "@swc/cli": "^0.8.0",
+    "@swc/core": "^1.15.21",
+    "@types/node": "^25.5.0",
+    "typescript": "^5.9.3"
+  }
+}

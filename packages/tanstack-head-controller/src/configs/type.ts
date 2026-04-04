@@ -1,0 +1,1 @@
+export type ThcConfigs = Record<string, any>

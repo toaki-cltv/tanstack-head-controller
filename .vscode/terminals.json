@@ -1,0 +1,30 @@
+{
+  "autorun": false,
+  "terminals": [
+    {
+      "name": "root",
+      "focus": true,
+      "cwd": "."
+    },
+    {
+      "name": "docs",
+      "cwd": "docs"
+    },
+    {
+      "name": "examples - tanstack-react",
+      "cwd": "examples/tanstack-react"
+    },
+    {
+      "name": "tanstack-head-controller",
+      "cwd": "packages/tanstack-head-controller"
+    },
+    {
+      "name": "thc-plugin-merge",
+      "cwd": "packages/thc-plugin-merge"
+    },
+    {
+      "name": "thc-plugin-ttplate",
+      "cwd": "packages/thc-plugin-ttplate"
+    },
+  ]
+}

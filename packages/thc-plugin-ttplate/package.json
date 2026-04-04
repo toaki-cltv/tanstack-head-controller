@@ -1,0 +1,38 @@
+{
+  "name": "thc-plugin-ttplate",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "author": "toakiryu",
+  "license": "Apache-2.0",
+  "funding": "https://buymeacoffee.com/toakiryu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toaki-cltv/tanstack-head-controller.git",
+    "directory": "packages/thc-plugin-ttplate"
+  },
+  "bugs": "https://github.com/toaki-cltv/tanstack-head-controller/issues",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=22x"
+  },
+  "scripts": {
+    "build": "node ../../scripts/build.ts thc-plugin-ttplate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "packageManager": "pnpm@10.31.0",
+  "dependencies": {
+    "tanstack-head-controller": "workspace:*"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.0",
+    "@types/node": "^22.19.15",
+    "typescript": "^5.9.3"
+  }
+}
