@@ -28,6 +28,12 @@
     "release": "node ./scripts/release.js"
   },
   "packageManager": "pnpm@10.31.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "lightningcss"
+    ]
+  },
   "devDependencies": {
     "@biomejs/biome": "2.4.0",
     "@swc/cli": "^0.8.0",
