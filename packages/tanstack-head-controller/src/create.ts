@@ -1,5 +1,5 @@
 import type { ThcConfigs } from "./configs/type.js";
-import { editContext } from "./context/edit.js";
+import { editContext } from "./context/internal.js";
 import { cLogger } from "./lib/logger.js";
 import type { ThcPlugin } from "./plugins/type.js";
 

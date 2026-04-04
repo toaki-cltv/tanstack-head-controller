@@ -9,16 +9,22 @@ export interface ContextEditProps {
   plugins?: ThcPlugin[];
 }
 export const editContext = (ctx: any, props: ContextEditProps): ContextEditProps => {
+  const thc = ctx.context?.thc;
+
   const result = {
     ...ctx,
-    ...props,
-    configs: {
-      ...ctx.configs,
-      ...props.configs,
+    context: {
+      ...ctx.context,
+      thc: {
+        ...thc,
+        ...props,
+        configs: { ...(thc?.configs || {}), ...(props.configs || {}) },
+        plugins: [...(thc?.plugins || []), ...(props.plugins || [])],
+      },
     },
   };
 
-  logger.debug("Context edited", { ctx, props, result });
+  logger.debug("Context edited", { ctx: thc, result: result.context.thc });
 
   return result;
 };

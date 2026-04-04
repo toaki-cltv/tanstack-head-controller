@@ -59,11 +59,11 @@ export function useSafeHeadCtrlrContext(
     return null;
   }
 
-  const headCtrlr = ctx.thc;
+  const headCtrlr = ctx?.thc;
 
   if (!isHeadCtrlrContext(headCtrlr)) {
     if (isThrow) {
-      throw logger.error("Invalid context: 'headCtrlr.plugins' must be an array.");
+      throw logger.error("Invalid context: 'plugins' must be an array.");
     }
     return null;
   }

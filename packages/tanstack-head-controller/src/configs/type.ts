@@ -1,1 +1,3 @@
-export type ThcConfigs = Record<string, any>;
+export interface ThcConfigs extends Record<string, any> {
+  debug?: boolean;
+}

@@ -5,7 +5,7 @@ export const cLogger = () =>
     type: "pretty",
     name: "THC",
     prettyLogTemplate:
-      "{{yyyy}}-{{mm}}-{{dd}} {{hh}}:{{MM}}:{{ss}}.{{ms}} {{logLevelName}} {{name}} ",
+      "{{yyyy}}-{{mm}}-{{dd}} [{{filePathWithLine}}] {{hh}}:{{MM}}:{{ss}}.{{ms}} {{logLevelName}} {{name}} ",
     overwrite: {
       transportFormatted: (logMetaMarkup, logArgs, logErrors) => {
         const output = `${logMetaMarkup}${logArgs.map(formatLogArg).join(" ")}${logErrors.length > 0 ? `\n${logErrors.join("\n")}` : ""}`;
