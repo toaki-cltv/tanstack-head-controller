@@ -79,8 +79,23 @@ jobs:
           echo "   Previous: $PREV"
           echo "   Changed: $CHANGED"
 
+  build:
+    name: Build all packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (internal)
+        uses: toakiryu/workflows/setup-js@v1
+        with:
+          fetch-all: true
+
+      - name: Build all packages
+        run: pnpm build
+
   release:
-    needs: check-version
+    needs: [check-version, build]
     if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/') || needs.check-version.outputs.changed == 'true' }}
     uses: toakiryu/workflows/.github/workflows/release.yml@v1
     with:
