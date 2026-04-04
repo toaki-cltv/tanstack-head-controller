@@ -85,7 +85,7 @@ jobs:
     uses: toakiryu/workflows/.github/workflows/release.yml@v1
     with:
       publish: true
-      build: true
+      build: pnpm build
       tag: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tag || needs.check-version.outputs.publish_tag }}
     permissions:
       contents: write
