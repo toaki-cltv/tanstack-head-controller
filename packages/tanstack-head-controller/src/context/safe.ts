@@ -52,14 +52,14 @@ export function useSafeHeadCtrlrContext(
     return null;
   }
 
-  if (!("headCtrlr" in ctx)) {
+  if (!("thc" in ctx)) {
     if (isThrow) {
-      throw logger.error("Invalid context: Missing 'headCtrlr' property.");
+      throw logger.error("Invalid context: Missing 'thc' property.");
     }
     return null;
   }
 
-  const headCtrlr = ctx.headCtrlr;
+  const headCtrlr = ctx.thc;
 
   if (!isHeadCtrlrContext(headCtrlr)) {
     if (isThrow) {

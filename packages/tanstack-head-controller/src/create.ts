@@ -16,5 +16,7 @@ export const createHeadController = (options: CreateHeadControllerOptions = {}) 
   // logger.info("Initializing head controller with options:", options);
   // logger.info("Registered plugins:", plugins);
 
-  return editContext({}, { configs, plugins });
+  return {
+    thc: editContext({}, { configs, plugins }),
+  };
 };
