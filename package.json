@@ -17,7 +17,6 @@
     "build": "node ./scripts/build.ts",
     "publish:thc": "pnpm --filter tanstack-head-controller publish --access public",
     "publish:merge": "pnpm --filter thc-plugin-merge publish --access public",
-    "publish:ttplate": "pnpm --filter thc-plugin-ttplate publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
