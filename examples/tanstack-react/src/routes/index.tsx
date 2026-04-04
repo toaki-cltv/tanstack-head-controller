@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/")({ component: App });
+export const Route = createFileRoute("/")({
+  context: (ctx) => {
+    console.log("Context before edit", ctx);
+  },
+  component: App,
+});
 
 function App() {
   return (

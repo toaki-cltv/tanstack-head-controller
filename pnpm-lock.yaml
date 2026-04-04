@@ -92,9 +92,6 @@ importers:
       thc-plugin-merge:
         specifier: workspace:*
         version: link:../../packages/thc-plugin-merge
-      thc-plugin-ttplate:
-        specifier: workspace:*
-        version: link:../../packages/thc-plugin-ttplate
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -174,21 +171,6 @@ importers:
         version: 5.9.3
 
   packages/thc-plugin-merge:
-    devDependencies:
-      '@biomejs/biome':
-        specifier: 2.4.0
-        version: 2.4.0
-      '@types/node':
-        specifier: ^22.19.15
-        version: 22.19.15
-      tanstack-head-controller:
-        specifier: workspace:*
-        version: link:../tanstack-head-controller
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/thc-plugin-ttplate:
     devDependencies:
       '@biomejs/biome':
         specifier: 2.4.0

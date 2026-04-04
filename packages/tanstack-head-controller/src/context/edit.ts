@@ -8,7 +8,7 @@ export interface ContextEditProps {
   configs?: ThcConfigs;
   plugins?: ThcPlugin[];
 }
-export const editContext = (ctx: any, props: ContextEditProps): ContextEditProps => {
+export const editContext = (ctx: any, props: ContextEditProps) => {
   const thc = ctx.context?.thc;
 
   const result = {
@@ -17,7 +17,6 @@ export const editContext = (ctx: any, props: ContextEditProps): ContextEditProps
       ...ctx.context,
       thc: {
         ...thc,
-        ...props,
         configs: { ...(thc?.configs || {}), ...(props.configs || {}) },
         plugins: [...(thc?.plugins || []), ...(props.plugins || [])],
       },

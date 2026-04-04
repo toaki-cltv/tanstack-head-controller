@@ -29,7 +29,6 @@
     "tailwindcss": "^4.1.18",
     "tanstack-head-controller": "workspace:*",
     "thc-plugin-merge": "workspace:*",
-    "thc-plugin-ttplate": "workspace:*",
     "zod": "^4.3.6"
   },
   "devDependencies": {

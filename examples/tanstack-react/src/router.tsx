@@ -1,7 +1,6 @@
 import { createRouter as createTanStackRouter } from "@tanstack/react-router";
 import { createHeadController } from "tanstack-head-controller";
 import { thcMerge } from "thc-plugin-merge";
-import { thcTitleTemplate } from "thc-plugin-ttplate";
 import { routeTree } from "./routeTree.gen";
 
 export function getRouter() {
@@ -10,12 +9,7 @@ export function getRouter() {
 
     context: {
       ...createHeadController({
-        plugins: [
-          thcMerge(),
-          thcTitleTemplate({
-            siteName: "TanStack Starter",
-          }),
-        ],
+        plugins: [thcMerge()],
       }),
     },
 
