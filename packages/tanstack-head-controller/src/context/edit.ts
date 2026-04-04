@@ -1,6 +1,6 @@
-import type { ThcConfigs } from "../configs/type";
-import type { ThcPlugin } from "../plugins/type";
-import { rLogger } from "./log";
+import type { ThcConfigs } from "../configs/type.js";
+import type { ThcPlugin } from "../plugins/type.js";
+import { rLogger } from "./log.js";
 
 const logger = rLogger.getSubLogger({ name: "Edit" });
 
@@ -8,7 +8,7 @@ export interface ContextEditProps {
   configs?: ThcConfigs;
   plugins?: ThcPlugin[];
 }
-export const editContext = (ctx: any, props: ContextEditProps) => {
+export const editContext = (ctx: any, props: ContextEditProps): ContextEditProps => {
   const result = {
     ...ctx,
     ...props,

@@ -1,5 +1,5 @@
 import type { MakeRouteMatchUnion } from "@tanstack/react-router";
-import type { Head } from "../types/head";
+import type { Head } from "../types/head.js";
 
 /**
  * route の生データから head 情報を収集するためのユーティリティ関数

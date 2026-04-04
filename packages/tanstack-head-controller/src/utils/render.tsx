@@ -1,4 +1,4 @@
-import type { Head } from "../types/head";
+import type { Head } from "../types/head.js";
 
 /**
  * ヘッダーのレンダリングコンポーネント

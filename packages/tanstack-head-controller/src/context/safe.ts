@@ -6,8 +6,8 @@
  * 3. コンテキストの使用箇所で、必要なプロパティが存在することを保証する。
  */
 
-import { rLogger } from "./log";
-import type { headCtrlrContext } from "./type";
+import { rLogger } from "./log.js";
+import type { headCtrlrContext } from "./type.js";
 
 const logger = rLogger.getSubLogger({ name: "Safe" });
 

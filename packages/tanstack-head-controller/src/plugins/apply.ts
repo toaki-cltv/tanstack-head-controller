@@ -1,5 +1,5 @@
-import type { headCtrlrContext } from "../context/type";
-import type { Head } from "../types/head";
+import type { headCtrlrContext } from "../context/type.js";
+import type { Head } from "../types/head.js";
 
 export interface ApplyPluginsOptions {
   head: Head.index;
