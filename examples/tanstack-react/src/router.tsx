@@ -1,9 +1,8 @@
-import { createRouter as createTanStackRouter } from '@tanstack/react-router'
-import { routeTree } from './routeTree.gen'
-
-import { createHeadController } from 'tanstack-head-controller'
-import { thcMerge } from 'thc-plugin-merge'
-import { thcTitleTemplate } from 'thc-plugin-ttplate'
+import { createRouter as createTanStackRouter } from "@tanstack/react-router";
+import { createHeadController } from "tanstack-head-controller";
+import { thcMerge } from "thc-plugin-merge";
+import { thcTitleTemplate } from "thc-plugin-ttplate";
+import { routeTree } from "./routeTree.gen";
 
 export function getRouter() {
   const router = createTanStackRouter({
@@ -14,22 +13,22 @@ export function getRouter() {
         plugins: [
           thcMerge(),
           thcTitleTemplate({
-            siteName: "TanStack Starter"
-          })
-        ]
-      })
+            siteName: "TanStack Starter",
+          }),
+        ],
+      }),
     },
 
     scrollRestoration: true,
-    defaultPreload: 'intent',
+    defaultPreload: "intent",
     defaultPreloadStaleTime: 0,
-  })
+  });
 
-  return router
+  return router;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface Register {
-    router: ReturnType<typeof getRouter>
+    router: ReturnType<typeof getRouter>;
   }
 }

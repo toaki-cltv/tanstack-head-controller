@@ -25,6 +25,6 @@
     {
       "name": "thc-plugin-ttplate",
       "cwd": "packages/thc-plugin-ttplate"
-    },
+    }
   ]
 }

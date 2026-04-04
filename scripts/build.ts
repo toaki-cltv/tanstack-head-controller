@@ -10,99 +10,99 @@ const rootDir = resolve(__dirname, "..");
 const packagesDir = resolve(rootDir, "packages");
 
 const run = (command: string, args: string[], cwd: string) =>
-	new Promise<void>((resolvePromise, rejectPromise) => {
-		const child = spawn(command, args, {
-			cwd,
-			stdio: "inherit",
-			shell: process.platform === "win32",
-		});
+  new Promise<void>((resolvePromise, rejectPromise) => {
+    const child = spawn(command, args, {
+      cwd,
+      stdio: "inherit",
+      shell: process.platform === "win32",
+    });
 
-		child.on("close", (code) => {
-			if (code === 0) {
-				resolvePromise();
-				return;
-			}
+    child.on("close", (code) => {
+      if (code === 0) {
+        resolvePromise();
+        return;
+      }
 
-			rejectPromise(new Error(`Command failed (${code}): ${command} ${args.join(" ")}`));
-		});
+      rejectPromise(new Error(`Command failed (${code}): ${command} ${args.join(" ")}`));
+    });
 
-		child.on("error", (error) => {
-			rejectPromise(error);
-		});
-	});
+    child.on("error", (error) => {
+      rejectPromise(error);
+    });
+  });
 
 const listPackages = async () => {
-	const entries = await readdir(packagesDir, { withFileTypes: true });
+  const entries = await readdir(packagesDir, { withFileTypes: true });
 
-	return entries
-		.filter((entry) => entry.isDirectory())
-		.map((entry) => entry.name)
-		.filter((name) => existsSync(resolve(packagesDir, name, "package.json")));
+  return entries
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .filter((name) => existsSync(resolve(packagesDir, name, "package.json")));
 };
 
 const buildPackage = async (packageName: string) => {
-	const packageDir = resolve(packagesDir, packageName);
-	const tsconfigPath = resolve(packageDir, "tsconfig.json");
-	const swcrcPath = resolve(packageDir, ".swcrc");
-	const distDir = resolve(packageDir, "dist");
+  const packageDir = resolve(packagesDir, packageName);
+  const tsconfigPath = resolve(packageDir, "tsconfig.json");
+  const swcrcPath = resolve(packageDir, ".swcrc");
+  const distDir = resolve(packageDir, "dist");
 
-	if (!existsSync(packageDir)) {
-		throw new Error(`Package not found: ${packageName}`);
-	}
+  if (!existsSync(packageDir)) {
+    throw new Error(`Package not found: ${packageName}`);
+  }
 
-	if (!existsSync(tsconfigPath)) {
-		throw new Error(`tsconfig.json not found: ${packageName}`);
-	}
+  if (!existsSync(tsconfigPath)) {
+    throw new Error(`tsconfig.json not found: ${packageName}`);
+  }
 
-	if (!existsSync(swcrcPath)) {
-		throw new Error(`.swcrc not found: ${packageName}`);
-	}
+  if (!existsSync(swcrcPath)) {
+    throw new Error(`.swcrc not found: ${packageName}`);
+  }
 
-	await rm(distDir, { recursive: true, force: true });
+  await rm(distDir, { recursive: true, force: true });
 
-	console.log(`\n[build] ${packageName} - swc`);
-	await run(
-		"pnpm",
-		["exec", "swc", "src", "-d", "dist", "--strip-leading-paths", "--config-file", ".swcrc"],
-		packageDir,
-	);
+  console.log(`\n[build] ${packageName} - swc`);
+  await run(
+    "pnpm",
+    ["exec", "swc", "src", "-d", "dist", "--strip-leading-paths", "--config-file", ".swcrc"],
+    packageDir
+  );
 
-	console.log(`[build] ${packageName} - types`);
-	await run(
-		"pnpm",
-		[
-			"exec",
-			"tsc",
-			"--project",
-			"tsconfig.json",
-			"--emitDeclarationOnly",
-			"--declaration",
-			"--declarationMap",
-			"--outDir",
-			"dist",
-		],
-		packageDir,
-	);
+  console.log(`[build] ${packageName} - types`);
+  await run(
+    "pnpm",
+    [
+      "exec",
+      "tsc",
+      "--project",
+      "tsconfig.json",
+      "--emitDeclarationOnly",
+      "--declaration",
+      "--declarationMap",
+      "--outDir",
+      "dist",
+    ],
+    packageDir
+  );
 };
 
 const main = async () => {
-	const targets = process.argv.slice(2);
-	const packages = targets.length > 0 ? targets : await listPackages();
+  const targets = process.argv.slice(2);
+  const packages = targets.length > 0 ? targets : await listPackages();
 
-	if (packages.length === 0) {
-		console.log("No packages found.");
-		return;
-	}
+  if (packages.length === 0) {
+    console.log("No packages found.");
+    return;
+  }
 
-	for (const packageName of packages) {
-		await buildPackage(packageName);
-	}
+  for (const packageName of packages) {
+    await buildPackage(packageName);
+  }
 
-	console.log("\nBuild completed.");
+  console.log("\nBuild completed.");
 };
 
 main().catch((error) => {
-	console.error("\nBuild failed.");
-	console.error(error);
-	process.exit(1);
+  console.error("\nBuild failed.");
+  console.error(error);
+  process.exit(1);
 });

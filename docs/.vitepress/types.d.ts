@@ -1,6 +1,6 @@
-import 'vitepress';
+import "vitepress";
 
-declare module 'vitepress' {
+declare module "vitepress" {
   export namespace DefaultTheme {
     /**
      * Extended options for the custom NotFound component.

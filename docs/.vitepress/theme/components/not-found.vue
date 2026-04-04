@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { useData, useRoute, withBase } from "vitepress";
 import { computed, onMounted, ref } from "vue";
-import { useData, withBase, useRoute } from "vitepress";
 
 const { theme, site } = useData();
 const route = useRoute();

@@ -1,8 +1,4 @@
-import {
-  defineConfig,
-  resolveSiteDataByRoute,
-  type HeadConfig,
-} from "vitepress";
+import { defineConfig, type HeadConfig, resolveSiteDataByRoute } from "vitepress";
 import {
   groupIconMdPlugin,
   groupIconVitePlugin,
@@ -15,7 +11,8 @@ const prod = !!process.env.NETLIFY;
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "TanStack Head Controller",
-  description: "A Head Controller for TanStack Router",
+  description:
+    "Head management for TanStack Router: collect route-level metadata, transform with plugins, and render consistent tags.",
 
   rewrites: {
     "ja/:rest*": ":rest*",
@@ -43,14 +40,14 @@ export default defineConfig({
       // We use `[!!code` in demo to prevent transformation, here we revert it back.
       {
         postprocess(code) {
-          return code.replace(/\[\!\!code/g, "[!code");
+          return code.replace(/\[!!code/g, "[!code");
         },
       },
     ],
     config(md) {
       // TODO: remove when https://github.com/vuejs/vitepress/issues/4431 is fixed
       const fence = md.renderer.rules.fence!;
-      md.renderer.rules.fence = function (tokens, idx, options, env, self) {
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
         const { localeIndex = "root" } = env;
         const codeCopyButtonTitle = (() => {
           switch (localeIndex) {
@@ -89,10 +86,10 @@ export default defineConfig({
     plugins: [
       groupIconVitePlugin({
         customIcon: {
-          vitepress: localIconLoader(
-            import.meta.url,
-            "../public/icon.png"
-          ),
+          // vitepress: localIconLoader(
+          //   import.meta.url,
+          //   "../public/icon.png"
+          // ),
           firebase: "logos:firebase",
         },
       }),
@@ -105,10 +102,7 @@ export default defineConfig({
 
   transformPageData: prod
     ? (pageData, ctx) => {
-        const site = resolveSiteDataByRoute(
-          ctx.siteConfig.site,
-          pageData.relativePath
-        );
+        const site = resolveSiteDataByRoute(ctx.siteConfig.site, pageData.relativePath);
         const title = `${pageData.title || site.title} | ${
           pageData.description || site.description
         }`;

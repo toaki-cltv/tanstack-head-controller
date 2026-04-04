@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import http from "http";
-import fs from "fs";
-import path from "path";
 import { spawn } from "child_process";
+import fs from "fs";
+import http from "http";
+import path from "path";
 
 function chooseDefaultDir(cwd) {
   const cand1 = path.join(cwd, ".vitepress", "dist", "_translations");

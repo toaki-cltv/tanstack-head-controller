@@ -1,7 +1,5 @@
-import { ThcPlugin } from "./type";
+import type { ThcPlugin } from "./type";
 
-export function createThcPlugin(
-  plugin: ThcPlugin
-): ThcPlugin {
-  return plugin
+export function createThcPlugin(plugin: ThcPlugin): ThcPlugin {
+  return plugin;
 }

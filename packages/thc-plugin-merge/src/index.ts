@@ -1,4 +1,4 @@
-import { createThcPlugin, type ThcPlugin } from "tanstack-head-controller/plugins"
+import { createThcPlugin, type ThcPlugin } from "tanstack-head-controller/plugins";
 
 /**
  * THC Merge Plugin
@@ -13,18 +13,21 @@ export const thcMerge = (): ThcPlugin =>
     name: "tv.tkcl.thc.merge",
 
     transform(head) {
-      const mergedMeta = head.meta?.reduce((acc, meta) => {
-        if (!meta) return acc
-        const existing = acc.find((m) => m?.name === meta.name)
-        if (existing) {
-          return acc.map((m) => (m === existing ? { ...m, ...meta } : m))
-        }
-        return [...acc, meta]
-      }, [] as typeof head.meta)
+      const mergedMeta = head.meta?.reduce(
+        (acc, meta) => {
+          if (!meta) return acc;
+          const existing = acc.find((m) => m?.name === meta.name);
+          if (existing) {
+            return acc.map((m) => (m === existing ? { ...m, ...meta } : m));
+          }
+          return [...acc, meta];
+        },
+        [] as typeof head.meta
+      );
 
       return {
         ...head,
-        meta: mergedMeta
-      }
-    }
-  })
+        meta: mergedMeta,
+      };
+    },
+  });

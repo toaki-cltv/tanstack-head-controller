@@ -1,4 +1,4 @@
-import { type AnyRouteMatch } from "@tanstack/react-router";
+import type { AnyRouteMatch } from "@tanstack/react-router";
 
 type __Meta = AnyRouteMatch["meta"];
 type __Links = AnyRouteMatch["links"];

@@ -1,17 +1,19 @@
 import { Logger } from "tslog";
 
-export const cLogger = () => new Logger({
-  type: "pretty",
-  name: "THC",
-  prettyLogTemplate: "{{yyyy}}-{{mm}}-{{dd}} {{hh}}:{{MM}}:{{ss}}.{{ms}} {{logLevelName}} {{name}} ",
-  overwrite: {
-    transportFormatted: (logMetaMarkup, logArgs, logErrors) => {
-      const output = `${logMetaMarkup}${logArgs.map(formatLogArg).join(" ")}${logErrors.length > 0 ? `\n${logErrors.join("\n")}` : ""}`;
+export const cLogger = () =>
+  new Logger({
+    type: "pretty",
+    name: "THC",
+    prettyLogTemplate:
+      "{{yyyy}}-{{mm}}-{{dd}} {{hh}}:{{MM}}:{{ss}}.{{ms}} {{logLevelName}} {{name}} ",
+    overwrite: {
+      transportFormatted: (logMetaMarkup, logArgs, logErrors) => {
+        const output = `${logMetaMarkup}${logArgs.map(formatLogArg).join(" ")}${logErrors.length > 0 ? `\n${logErrors.join("\n")}` : ""}`;
 
-      console.log(output);
+        console.log(output);
+      },
     },
-  },
-});
+  });
 
 const useAnsiColors = typeof process !== "undefined" && process?.versions?.node != null;
 
@@ -104,7 +106,9 @@ const formatValue = (value: unknown, indentLevel: number, seen: WeakSet<object>)
     }
 
     const nextIndent = indentLevel + 2;
-    const items = value.map((item) => `${indent(nextIndent)}${formatValue(item, nextIndent, seen)}`);
+    const items = value.map(
+      (item) => `${indent(nextIndent)}${formatValue(item, nextIndent, seen)}`
+    );
     return `${colorize("[", "dim")}\n${items.join(colorize(",", "dim") + "\n")}
 ${indent(indentLevel)}${colorize("]", "dim")}`;
   }
@@ -116,7 +120,10 @@ ${indent(indentLevel)}${colorize("]", "dim")}`;
   }
 
   const nextIndent = indentLevel + 2;
-  const lines = entries.map(([key, entryValue]) => `${indent(nextIndent)}${colorize(key, "yellow")}: ${formatValue(entryValue, nextIndent, seen)}`);
+  const lines = entries.map(
+    ([key, entryValue]) =>
+      `${indent(nextIndent)}${colorize(key, "yellow")}: ${formatValue(entryValue, nextIndent, seen)}`
+  );
 
   return `${colorize("{", "dim")}\n${lines.join(colorize(",", "dim") + "\n")}
 ${indent(indentLevel)}${colorize("}", "dim")}`;

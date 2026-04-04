@@ -1,11 +1,8 @@
-import { headCtrlrContext } from "../context/type"
-import { Head } from "../types/head"
+import type { headCtrlrContext } from "../context/type";
+import type { Head } from "../types/head";
 
 export type ThcPlugin = {
-  name: string
+  name: string;
 
-  transform?: (
-    head: Head.index,
-    ctx: headCtrlrContext
-  ) => Head.index
-}
+  transform?: (head: Head.index, ctx: headCtrlrContext) => Head.index;
+};

@@ -11,7 +11,8 @@ const packageJsonPath = path.join("../packages/tanstack-head-controller/package.
 const pkg = JSON.parse(await readFile(packageJsonPath, "utf-8"));
 
 export default defineAdditionalConfig({
-  description: "A Head Controller for TanStack Router",
+  description:
+    "A library for TanStack Router that collects route-level head data, applies plugin-based transforms, and renders tags safely.",
   themeConfig: {
     nav: nav(),
     search: {
@@ -120,9 +121,7 @@ function sidebarDocs(): DefaultTheme.SidebarItem[] {
     {
       text: "Developer Resources",
       collapsed: false,
-      items: [
-        { text: "Documentation", link: "development" },
-      ]
+      items: [{ text: "Documentation", link: "development" }],
     },
     {
       text: "LLM Assistant (Beta)",

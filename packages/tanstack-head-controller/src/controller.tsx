@@ -1,9 +1,9 @@
-import { useRouterState } from "@tanstack/react-router"
-import { collectHeadDataFromRoutes } from "./utils/data";
-import { HeadRender } from "./utils/render";
+import { useRouterState } from "@tanstack/react-router";
+import { useSafeHeadCtrlrContext } from "./context/safe";
 import { cLogger } from "./lib/logger";
 import { applyPlugins } from "./plugins/apply";
-import { useSafeHeadCtrlrContext } from "./context/safe";
+import { collectHeadDataFromRoutes } from "./utils/data";
+import { HeadRender } from "./utils/render";
 
 // Loggerの初期化
 const logger = cLogger().getSubLogger({ name: "Controller" });
@@ -39,4 +39,4 @@ export const HeadControllerRender = () => {
   // logger.info("Final Head:", { finalHead });
 
   return <HeadRender head={finalHead} />;
-}
+};

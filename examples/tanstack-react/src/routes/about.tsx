@@ -1,31 +1,31 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { editContext } from 'tanstack-head-controller/context'
+import { createFileRoute } from "@tanstack/react-router";
+import { editContext } from "tanstack-head-controller/context";
 
-export const Route = createFileRoute('/about')({
+export const Route = createFileRoute("/about")({
   context: (ctx) => {
     return editContext(ctx, {
       configs: {
         debug: true,
-      }
-    })
+      },
+    });
   },
   head: () => ({
     meta: [
       {
-        title: "About"
+        title: "About",
       },
       {
-        property: 'og:title',
-        content: 'About - TanStack Start Starter',
+        property: "og:title",
+        content: "About - TanStack Start Starter",
       },
       {
-        property: 'og:description',
-        content: 'Learn more about the TanStack Start Starter and its features.',
-      }
-    ]
+        property: "og:description",
+        content: "Learn more about the TanStack Start Starter and its features.",
+      },
+    ],
   }),
   component: About,
-})
+});
 
 function About() {
   return (
@@ -36,11 +36,10 @@ function About() {
           A small starter with room to grow.
         </h1>
         <p className="m-0 max-w-3xl text-base leading-8 text-[var(--sea-ink-soft)]">
-          TanStack Start gives you type-safe routing, server functions, and
-          modern SSR defaults. Use this as a clean foundation, then layer in
-          your own routes, styling, and add-ons.
+          TanStack Start gives you type-safe routing, server functions, and modern SSR defaults. Use
+          this as a clean foundation, then layer in your own routes, styling, and add-ons.
         </p>
       </section>
     </main>
-  )
+  );
 }

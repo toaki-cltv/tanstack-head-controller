@@ -1,1 +1,1 @@
-export type ThcConfigs = Record<string, any>
+export type ThcConfigs = Record<string, any>;
