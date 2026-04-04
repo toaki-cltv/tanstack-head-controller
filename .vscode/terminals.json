@@ -21,10 +21,6 @@
     {
       "name": "thc-plugin-merge",
       "cwd": "packages/thc-plugin-merge"
-    },
-    {
-      "name": "thc-plugin-ttplate",
-      "cwd": "packages/thc-plugin-ttplate"
     }
   ]
 }
