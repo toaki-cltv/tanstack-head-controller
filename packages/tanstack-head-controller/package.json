@@ -2,17 +2,35 @@
   "name": "tanstack-head-controller",
   "type": "module",
   "version": "0.0.1",
-  "description": "",
+  "description": "Head management library for TanStack Router with plugin-based transforms.",
+  "homepage": "https://thc.tkcl.tv/",
   "author": "toakiryu",
   "license": "Apache-2.0",
   "funding": "https://buymeacoffee.com/toakiryu",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/toaki-cltv/tanstack-head-controller.git",
     "directory": "packages/tanstack-head-controller"
   },
   "bugs": "https://github.com/toaki-cltv/tanstack-head-controller/issues",
-  "keywords": [],
+  "keywords": [
+    "tanstack",
+    "tanstack-router",
+    "react",
+    "router",
+    "head",
+    "meta",
+    "seo",
+    "controller",
+    "ecosystem"
+  ],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -32,16 +50,13 @@
     }
   },
   "engines": {
-    "node": ">=22x"
+    "node": ">=22"
   },
-  "scripts": {
-    "build": "node ../../scripts/build.ts tanstack-head-controller",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "peerDependencies": {
+    "@tanstack/react-router": ">=1",
+    "react": ">=19"
   },
-  "packageManager": "pnpm@10.31.0",
   "dependencies": {
-    "@tanstack/react-router": "latest",
-    "react": "^19.2.0",
     "tslog": "^4.10.2",
     "zod": "^4.3.6"
   },
@@ -49,6 +64,19 @@
     "@biomejs/biome": "2.4.0",
     "@types/node": "^22.19.15",
     "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
     "typescript": "^5.9.3"
+  },
+  "peerDependenciesMeta": {
+    "@tanstack/react-router": {
+      "optional": false
+    },
+    "react": {
+      "optional": false
+    }
+  },
+  "scripts": {
+    "build": "node ../../scripts/build.ts tanstack-head-controller",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
