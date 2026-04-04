@@ -87,8 +87,8 @@ importers:
         specifier: ^4.1.18
         version: 4.2.2
       tanstack-head-controller:
-        specifier: workspace:*
-        version: link:../../packages/tanstack-head-controller
+        specifier: ^0.0.2
+        version: 0.0.2(@tanstack/react-router@1.168.8(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       thc-plugin-merge:
         specifier: workspace:*
         version: link:../../packages/thc-plugin-merge
@@ -3082,6 +3082,13 @@ packages:
 
   tailwindcss@4.2.2:
     resolution: {integrity: sha512-KWBIxs1Xb6NoLdMVqhbhgwZf2PGBpPEiwOqgI4pFIYbNTfBXiKYyWoTsXgBQ9WFg/OlhnvHaY+AEpW7wSmFo2Q==}
+
+  tanstack-head-controller@0.0.2:
+    resolution: {integrity: sha512-pDNUo0lZV7/pgjjmHf6UUfith6jnqaVKGaazUxNjW1+Rhd9lWvLccEBhkuAoDTnnICvxaP1kX0ATLG6UfuOwcA==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      '@tanstack/react-router': '>=1'
+      react: '>=19'
 
   tapable@2.3.2:
     resolution: {integrity: sha512-1MOpMXuhGzGL5TTCZFItxCc0AARf1EZFQkGqMm7ERKj8+Hgr5oLvJOVFcC+lRmR8hCe2S3jC4T5D7Vg/d7/fhA==}
@@ -6390,6 +6397,12 @@ snapshots:
   tabbable@6.4.0: {}
 
   tailwindcss@4.2.2: {}
+
+  tanstack-head-controller@0.0.2(@tanstack/react-router@1.168.8(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4):
+    dependencies:
+      '@tanstack/react-router': 1.168.8(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react: 19.2.4
+      tslog: 4.10.2
 
   tapable@2.3.2: {}
 

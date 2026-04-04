@@ -39,6 +39,7 @@
   },
   "scripts": {
     "build": "node ../../scripts/build.ts thc-plugin-merge",
+    "prepack": "pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "packageManager": "pnpm@10.31.0",
