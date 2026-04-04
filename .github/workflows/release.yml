@@ -37,7 +37,7 @@ jobs:
         run: |
           set -e
           echo "🔍 Checking version consistency across monorepo packages..."
-          node .scripts/check-versions.js
+          node scripts/check-versions.js
 
       - id: check_changed
         name: Compare with previous version

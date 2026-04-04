@@ -27,7 +27,7 @@ jobs:
       - name: Check version consistency
         run: |
           echo "🔍 Checking that all packages have the same version..."
-          node .scripts/check-versions.js
+          node scripts/check-versions.js
 
       - name: Report success
         if: success()
