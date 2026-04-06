@@ -15,8 +15,20 @@
       "cwd": "examples/tanstack-react"
     },
     {
-      "name": "tanstack-head-controller",
-      "cwd": "packages/tanstack-head-controller"
+      "name": "examples - tanstack-solid",
+      "cwd": "examples/tanstack-solid"
+    },
+    {
+      "name": "core",
+      "cwd": "packages/core"
+    },
+    {
+      "name": "adapter - react",
+      "cwd": "packages/react"
+    },
+    {
+      "name": "adapter - solid",
+      "cwd": "packages/solid"
     },
     {
       "name": "thc-plugin-merge",

@@ -1,0 +1,72 @@
+{
+  "name": "@thcjs/core",
+  "type": "module",
+  "version": "0.1.0-alpha.1",
+  "description": "Core head controller for TanStack Router.",
+  "homepage": "https://thc.tkcl.tv/en/",
+  "author": "toakiryu",
+  "license": "Apache-2.0",
+  "funding": "https://buymeacoffee.com/toakiryu",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toaki-cltv/tanstack-head-controller.git",
+    "directory": "packages/core"
+  },
+  "bugs": "https://github.com/toaki-cltv/tanstack-head-controller/issues",
+  "keywords": [
+    "thcjs",
+    "tanstack",
+    "tanstack-router",
+    "router",
+    "head",
+    "meta",
+    "seo",
+    "controller"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.js"
+    },
+    "./context": {
+      "types": "./dist/context/index.d.ts",
+      "import": "./dist/context/index.js"
+    },
+    "./configs": {
+      "types": "./dist/configs/index.d.ts",
+      "import": "./dist/configs/index.js"
+    },
+    "./plugins": {
+      "types": "./dist/plugins/index.d.ts",
+      "import": "./dist/plugins/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@tanstack/router-core": "^1.168.9",
+    "tslog": "^4.10.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.0",
+    "@types/node": "^24.12.2",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "node ../../scripts/build.ts core",
+    "prepack": "pnpm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

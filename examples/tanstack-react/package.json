@@ -27,7 +27,8 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.18",
-    "tanstack-head-controller": "workspace:*",
+    "@thcjs/core": "workspace:*",
+    "@thcjs/react": "workspace:*",
     "thc-plugin-merge": "workspace:*",
     "zod": "^4.3.6"
   },

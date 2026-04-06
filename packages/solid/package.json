@@ -1,9 +1,9 @@
 {
-  "name": "thc-plugin-merge",
+  "name": "@thcjs/solid",
   "type": "module",
   "version": "0.1.0-alpha.1",
-  "description": "Official merge plugin for @thcjs/core.",
-  "homepage": "https://thc.tkcl.tv/en/docs/usage",
+  "description": "Solid adapter for @thcjs/core with TanStack Solid Router.",
+  "homepage": "https://thc.tkcl.tv/en/",
   "author": "toakiryu",
   "license": "Apache-2.0",
   "funding": "https://buymeacoffee.com/toakiryu",
@@ -14,16 +14,20 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/toaki-cltv/tanstack-head-controller.git",
-    "directory": "packages/thc-plugin-merge"
+    "directory": "packages/solid"
   },
   "bugs": "https://github.com/toaki-cltv/tanstack-head-controller/issues",
   "keywords": [
+    "thcjs",
     "tanstack",
     "tanstack-router",
+    "solid",
+    "router",
     "head",
     "meta",
-    "plugin",
-    "merge"
+    "seo",
+    "controller",
+    "ecosystem"
   ],
   "files": [
     "dist"
@@ -37,19 +41,31 @@
   "engines": {
     "node": ">=22"
   },
-  "scripts": {
-    "build": "node ../../scripts/build.ts thc-plugin-merge",
-    "prepack": "pnpm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "packageManager": "pnpm@10.31.0",
   "peerDependencies": {
+    "@tanstack/solid-router": ">=1",
+    "solid-js": ">=1.9",
     "@thcjs/core": ">=0.1.0-alpha.1"
+  },
+  "dependencies": {
+    "tslog": "^4.10.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.0",
     "@types/node": "^24.12.2",
     "@thcjs/core": "workspace:*",
     "typescript": "^5.9.3"
+  },
+  "peerDependenciesMeta": {
+    "@tanstack/solid-router": {
+      "optional": false
+    },
+    "solid-js": {
+      "optional": false
+    }
+  },
+  "scripts": {
+    "build": "node ../../scripts/build.ts solid",
+    "prepack": "pnpm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

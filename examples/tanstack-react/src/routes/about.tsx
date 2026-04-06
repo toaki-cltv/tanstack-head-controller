@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { editContext } from "tanstack-head-controller/context";
+import { editContext } from "@thcjs/core/context";
 
 export const Route = createFileRoute("/about")({
   context: (ctx) => {

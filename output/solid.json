@@ -1,0 +1,96 @@
+[
+  {
+    "id": "__root__/",
+    "ssr": true,
+    "index": 0,
+    "routeId": "__root__",
+    "params": {},
+    "_strictParams": {},
+    "pathname": "/",
+    "updatedAt": 1775512583734,
+    "search": {},
+    "_strictSearch": {},
+    "status": "success",
+    "isFetching": false,
+    "_nonReactive": {
+      "loadPromise": {
+        "status": "pending"
+      }
+    },
+    "context": {},
+    "abortController": {},
+    "fetchCount": 0,
+    "cause": "enter",
+    "loaderDeps": "",
+    "invalid": false,
+    "preload": false,
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/src/styles.css"
+      }
+    ],
+    "headScripts": [
+      {
+        "children": "console.log(\"Hello from inline script!\");"
+      }
+    ],
+    "meta": [
+      {
+        "charSet": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "title": "TanStack Start Starter"
+      },
+      {
+        "property": "og:title",
+        "content": "TanStack Start Starter"
+      },
+      {
+        "property": "og:description",
+        "content": "A starter template for TanStack Start with React."
+      }
+    ],
+    "staticData": {},
+    "fullPath": "/",
+    "globalNotFound": false,
+    "styles": [
+      {
+        "children": "body { margin: 0; padding: 0; }"
+      }
+    ]
+  },
+  {
+    "id": "//",
+    "ssr": true,
+    "index": 1,
+    "routeId": "/",
+    "params": {},
+    "_strictParams": {},
+    "pathname": "/",
+    "updatedAt": 1775512583747,
+    "search": {},
+    "_strictSearch": {},
+    "status": "success",
+    "isFetching": false,
+    "_nonReactive": {
+      "loadPromise": {
+        "status": "pending"
+      }
+    },
+    "context": {},
+    "abortController": {},
+    "fetchCount": 0,
+    "cause": "enter",
+    "loaderDeps": "",
+    "invalid": false,
+    "preload": false,
+    "staticData": {},
+    "fullPath": "/",
+    "globalNotFound": false
+  }
+]
