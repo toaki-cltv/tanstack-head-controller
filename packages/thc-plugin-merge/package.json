@@ -1,7 +1,7 @@
 {
   "name": "thc-plugin-merge",
   "type": "module",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Official merge plugin for @thcjs/core.",
   "homepage": "https://thc.tkcl.tv/en/docs/usage",
   "author": "toakiryu",
