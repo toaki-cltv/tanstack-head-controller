@@ -21,10 +21,10 @@ export const HeadControllerRender = () => {
   // logger.info("Resolved Head from Routes:", { resolvedHead, ctx: currentRouteData?.context });
 
   // 現在のルートのコンテキストを安全に取得
-  const currentContext = useSafeHeadCtrlrContext(currentRouteData?.context);
+  const currentThcContext = useSafeHeadCtrlrContext(currentRouteData?.context);
 
   // もしコンテキストが取得できない場合は、警告を出力して、HeadRenderを返す
-  if (!currentContext) {
+  if (!currentThcContext) {
     logger.warn("No valid context found for the current route.");
     return <HeadRender head={resolvedHead} />;
   }
@@ -33,7 +33,11 @@ export const HeadControllerRender = () => {
   // logger.info("Current Route:", { pathname: currentRouteData?.pathname, resolvedHead });
 
   // プラグインの適用
-  const finalHead = applyPlugins({ head: resolvedHead, ctx: currentContext });
+  const finalHead = applyPlugins({
+    head: resolvedHead,
+    ctx: currentThcContext,
+    router: routes,
+  });
 
   // ログ出力
   // logger.info("Final Head:", { finalHead });
