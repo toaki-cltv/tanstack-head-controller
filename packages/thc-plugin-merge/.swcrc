@@ -3,18 +3,12 @@
   "jsc": {
     "target": "es2020",
     "parser": {
-      "syntax": "typescript",
-      "tsx": true
-    },
-    "transform": {
-      "react": {
-        "runtime": "automatic"
-      }
+      "syntax": "typescript"
     }
   },
   "module": {
     "type": "es6"
   },
   "minify": true,
-  "sourceMaps": true
+  "sourceMaps": false
 }

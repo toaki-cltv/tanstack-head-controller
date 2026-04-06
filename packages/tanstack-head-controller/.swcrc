@@ -16,5 +16,5 @@
     "type": "es6"
   },
   "minify": true,
-  "sourceMaps": true
+  "sourceMaps": false
 }
