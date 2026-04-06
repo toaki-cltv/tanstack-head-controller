@@ -77,7 +77,6 @@ const buildPackage = async (packageName: string) => {
       "tsconfig.json",
       "--emitDeclarationOnly",
       "--declaration",
-      "--declarationMap",
       "--outDir",
       "dist",
     ],
