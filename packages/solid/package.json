@@ -47,7 +47,6 @@
     "@thcjs/core": ">=0.1.0-alpha.1"
   },
   "dependencies": {
-    "tslog": "^4.10.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.0",

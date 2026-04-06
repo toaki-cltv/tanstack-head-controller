@@ -11,6 +11,14 @@
       "cwd": "docs"
     },
     {
+      "name": "tests - tanstack-react",
+      "cwd": "tests/tanstack-react"
+    },
+    {
+      "name": "tests - tanstack-solid",
+      "cwd": "tests/tanstack-solid"
+    },
+    {
       "name": "examples - tanstack-react",
       "cwd": "examples/tanstack-react"
     },

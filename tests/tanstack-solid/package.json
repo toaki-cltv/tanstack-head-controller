@@ -21,9 +21,9 @@
     "@tanstack/solid-start": "latest",
     "solid-js": "^1.9.11",
     "tailwindcss": "^4.1.18",
-    "@thcjs/core": "latest",
-    "@thcjs/solid": "latest",
-    "thc-plugin-merge": "latest",
+    "@thcjs/core": "workspace:*",
+    "@thcjs/solid": "workspace:*",
+    "thc-plugin-merge": "workspace:*",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
