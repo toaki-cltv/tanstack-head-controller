@@ -5,7 +5,7 @@
   "description": "Core head controller for TanStack Router.",
   "homepage": "https://thc.tkcl.tv/en/",
   "author": "toakiryu",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "funding": "https://buymeacoffee.com/toakiryu",
   "sideEffects": false,
   "main": "./dist/index.js",
