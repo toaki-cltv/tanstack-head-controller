@@ -1,7 +1,7 @@
 {
   "name": "tanstack-head-controller",
   "type": "module",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "Head management library for TanStack Router with plugin-based transforms.",
   "homepage": "https://thc.tkcl.tv",
   "author": "toakiryu",
