@@ -13,11 +13,12 @@ export function applyPlugins({ head, ctx, router }: ApplyPluginsOptions): Head.i
   const advanced = {
     router,
     head,
+    ctx,
   } as const;
 
   for (const plugin of ctx.plugins) {
     if (plugin.transform) {
-      result = plugin.transform(result, ctx, advanced);
+      result = plugin.transform(result, advanced);
     }
   }
 

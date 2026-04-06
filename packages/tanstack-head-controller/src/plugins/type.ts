@@ -5,11 +5,11 @@ import type { Head } from "../types/head.js";
 export type ThcPluginAdvanced = {
   router: AnyRouteMatch[];
   head: Head.index;
+  ctx: headCtrlrContext,
 };
 
 export type TransformFunction = (
   head: Head.index,
-  ctx: headCtrlrContext,
   advanced: ThcPluginAdvanced
 ) => Head.index;
 
