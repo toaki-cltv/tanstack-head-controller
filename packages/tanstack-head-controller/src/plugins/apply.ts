@@ -5,15 +5,17 @@ export interface ApplyPluginsOptions {
   head: Head.index;
   ctx: headCtrlrContext;
   router: AnyRouteMatch[];
+  currentRoute?: AnyRouteMatch;
 }
 
-export function applyPlugins({ head, ctx, router }: ApplyPluginsOptions): Head.index {
+export function applyPlugins({ head, ctx, router, currentRoute }: ApplyPluginsOptions): Head.index {
   let result = head;
 
   const advanced = {
     router,
     head,
     ctx,
+    currentRoute,
   } as const;
 
   for (const plugin of ctx.plugins) {

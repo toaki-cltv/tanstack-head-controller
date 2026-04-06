@@ -4,6 +4,7 @@ import type { Head } from "../types/head.js";
 
 export type ThcPluginAdvanced = {
   router: AnyRouteMatch[];
+  currentRoute?: AnyRouteMatch;
   head: Head.index;
   ctx: headCtrlrContext,
 };

@@ -37,6 +37,7 @@ export const HeadControllerRender = () => {
     head: resolvedHead,
     ctx: currentThcContext,
     router: routes,
+    currentRoute: currentRouteData
   });
 
   // ログ出力
