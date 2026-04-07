@@ -1,7 +1,7 @@
 {
   "name": "@thcjs/react",
   "type": "module",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0",
   "description": "React adapter for @thcjs/core with TanStack React Router.",
   "homepage": "https://thc.tkcl.tv/en/",
   "author": "toakiryu",
@@ -46,8 +46,7 @@
     "react": ">=19",
     "@thcjs/core": ">=0.1.0-alpha.1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@biomejs/biome": "2.4.0",
     "@types/node": "^24.12.2",
