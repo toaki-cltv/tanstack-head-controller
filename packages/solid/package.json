@@ -44,7 +44,7 @@
   "peerDependencies": {
     "@tanstack/solid-router": ">=1",
     "solid-js": ">=1.9",
-    "@thcjs/core": ">=0.1.0-alpha.1"
+    "@thcjs/core": ">=0.1.0"
   },
   "dependencies": {},
   "devDependencies": {

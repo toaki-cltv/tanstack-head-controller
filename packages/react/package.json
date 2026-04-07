@@ -44,7 +44,7 @@
   "peerDependencies": {
     "@tanstack/react-router": ">=1",
     "react": ">=19",
-    "@thcjs/core": ">=0.1.0-alpha.1"
+    "@thcjs/core": ">=0.1.0"
   },
   "dependencies": {},
   "devDependencies": {
