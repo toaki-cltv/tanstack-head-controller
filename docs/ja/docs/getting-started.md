@@ -7,15 +7,15 @@
 ::: code-group
 
 ```sh [ni]
-ni tanstack-head-controller thc-plugin-merge thc-plugin-ttplate
+ni @thcjs/core @thcjs/react thc-plugin-merge
 ```
 
 ```sh [npm]
-npm install tanstack-head-controller thc-plugin-merge thc-plugin-ttplate
+npm install @thcjs/core @thcjs/react thc-plugin-merge
 ```
 
 ```sh [pnpm]
-pnpm add tanstack-head-controller thc-plugin-merge thc-plugin-ttplate
+pnpm add @thcjs/core @thcjs/react thc-plugin-merge
 ```
 
 :::
@@ -24,9 +24,8 @@ pnpm add tanstack-head-controller thc-plugin-merge thc-plugin-ttplate
 
 ```tsx [router.tsx]
 import { createRouter } from '@tanstack/react-router'
-import { createHeadController } from 'tanstack-head-controller'
+import { createHeadController } from '@thcjs/core'
 import { thcMerge } from 'thc-plugin-merge'
-import { thcTitleTemplate } from 'thc-plugin-ttplate'
 
 export const router = createRouter({
   routeTree,
@@ -34,9 +33,6 @@ export const router = createRouter({
     ...createHeadController({
       plugins: [
         thcMerge(),
-        thcTitleTemplate({
-          siteName: "My App"
-        })
       ]
     })
   },
@@ -46,13 +42,13 @@ export const router = createRouter({
 ## 3. ルートドキュメントの head で描画
 
 ```tsx [__root.tsx]
-import { HeadControllerRender } from 'tanstack-head-controller'
+import { HeadController } from '@thcjs/react'
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang='ja'>
       <head>
-        <HeadControllerRender />
+        <HeadController />
       </head>
       <body>{children}</body>
     </html>
@@ -78,7 +74,7 @@ export const Route = createFileRoute('/about')({
 ここでは `editContext` を使っていますが、要点は「既存の context を保ったまま必要な設定だけを追加する」ことです。
 
 ```tsx [about.tsx]
-import { editContext } from 'tanstack-head-controller/context'
+import { editContext } from '@thcjs/core/context'
 
 export const Route = createFileRoute('/about')({
   context: (ctx) =>

@@ -55,7 +55,9 @@ To build individual packages:
 ::: code-group
 
 ```sh [node]
-node ./scripts/build.ts tanstack-head-controller
+node ./scripts/build.ts core
+node ./scripts/build.ts react
+node ./scripts/build.ts solid
 node ./scripts/build.ts thc-plugin-merge
 ```
 
@@ -63,10 +65,12 @@ node ./scripts/build.ts thc-plugin-merge
 
 ## Main packages
 
-- `packages/tanstack-head-controller`: core library
+- `packages/core`: core library
+- `packages/react`: React adapter
+- `packages/solid`: Solid adapter
 - `packages/thc-plugin-merge`: head merge plugin
-- `packages/thc-plugin-ttplate`: title template plugin
-- `examples/tanstack-react`: integration example
+- `examples/tanstack-react`: React integration example
+- `examples/tanstack-solid`: Solid integration example
 
 ## Docs update checklist
 

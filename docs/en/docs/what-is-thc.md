@@ -15,7 +15,7 @@ If you are starting from scratch, go to the [Quick Start](./getting-started).
 ## Core API
 
 - Create a controller with configs and plugins (`createHeadController`)
-- Resolve and render head tags for the current route (`HeadControllerRender`)
+- Resolve and render head tags for the current route (`HeadController`)
 - Safely merge controller-related values into route context (`editContext`)
 
 ## Plugin model

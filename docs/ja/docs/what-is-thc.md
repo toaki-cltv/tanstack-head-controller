@@ -15,7 +15,7 @@ TanStack Head Controller は、TanStack Router のルート定義から head 情
 ## 主な API
 
 - コントローラーを作成する（`createHeadController`）
-- 現在のルートに応じた head を描画する（`HeadControllerRender`）
+- 現在のルートに応じた head を描画する（`HeadController`）
 - ルートコンテキストへ設定を安全にマージする（`editContext`）
 
 ## プラグインモデル

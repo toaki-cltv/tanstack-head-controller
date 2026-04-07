@@ -4,34 +4,31 @@
 
 ## 基本構成
 
-1. ルーター context にコントローラー（例: `headCtrlr`）を配置する
+1. ルーター context にコントローラー（例: `thc`）を配置する
 2. ルートごとに head を返す
-3. ルートドキュメントの head で描画コンポーネント（`HeadControllerRender`）を配置する
+3. ルートドキュメントの head で描画コンポーネント（`HeadController`）を配置する
 
 ## プラグインを組み合わせる
 
 ```tsx
-import { createHeadController } from 'tanstack-head-controller'
+import { createHeadController } from '@thcjs/core'
 import { thcMerge } from 'thc-plugin-merge'
-import { thcTitleTemplate } from 'thc-plugin-ttplate'
 
 export const thc = createHeadController({
   plugins: [
     thcMerge(),
-    thcTitleTemplate({
-      siteName: 'TanStack Starter',
-      separator: ' | ',
-    }),
   ],
 })
 ```
+
+Solid を使う場合は、描画ステップで `@thcjs/react` を `@thcjs/solid` に置き換えてください。
 
 ## ルート context を編集する
 
 補助関数（`editContext`）を使うと、既存 context を保ったまま設定をマージできます。
 
 ```tsx [about.tsx]
-import { editContext } from 'tanstack-head-controller/context'
+import { editContext } from '@thcjs/core/context'
 
 export const Route = createFileRoute('/about')({
   context: (ctx) =>
@@ -46,7 +43,7 @@ export const Route = createFileRoute('/about')({
 ## プラグインを自作する
 
 ```tsx
-import { createThcPlugin } from 'tanstack-head-controller/plugins'
+import { createThcPlugin } from '@thcjs/core/plugins'
 
 export const forceNoIndex = () =>
   createThcPlugin({

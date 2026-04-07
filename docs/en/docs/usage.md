@@ -4,34 +4,31 @@ This page covers practical patterns for using TanStack Head Controller in real a
 
 ## Baseline integration
 
-1. Place the controller in router context (for example, `headCtrlr`)
+1. Place the controller in router context (for example, `thc`)
 2. Return head from routes
-3. Place the render component (`HeadControllerRender`) in the root document head
+3. Place the render component (`HeadController`) in the root document head
 
 ## Combine plugins
 
 ```tsx
-import { createHeadController } from 'tanstack-head-controller'
+import { createHeadController } from '@thcjs/core'
 import { thcMerge } from 'thc-plugin-merge'
-import { thcTitleTemplate } from 'thc-plugin-ttplate'
 
 export const thc = createHeadController({
   plugins: [
     thcMerge(),
-    thcTitleTemplate({
-      siteName: 'TanStack Starter',
-      separator: ' | ',
-    }),
   ],
 })
 ```
+
+If you are using Solid, replace `@thcjs/react` with `@thcjs/solid` in the render step.
 
 ## Edit route context
 
 Use the helper (`editContext`) to merge controller-specific values while preserving existing route context.
 
 ```tsx [about.tsx]
-import { editContext } from 'tanstack-head-controller/context'
+import { editContext } from '@thcjs/core/context'
 
 export const Route = createFileRoute('/about')({
   context: (ctx) =>
@@ -46,7 +43,7 @@ export const Route = createFileRoute('/about')({
 ## Write a custom plugin
 
 ```tsx
-import { createThcPlugin } from 'tanstack-head-controller/plugins'
+import { createThcPlugin } from '@thcjs/core/plugins'
 
 export const forceNoIndex = () =>
   createThcPlugin({

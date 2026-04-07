@@ -55,7 +55,9 @@ pnpm build
 ::: code-group
 
 ```sh [node]
-node ./scripts/build.ts tanstack-head-controller
+node ./scripts/build.ts core
+node ./scripts/build.ts react
+node ./scripts/build.ts solid
 node ./scripts/build.ts thc-plugin-merge
 ```
 
@@ -63,9 +65,12 @@ node ./scripts/build.ts thc-plugin-merge
 
 ## 主要パッケージ
 
-- `packages/tanstack-head-controller`: コアライブラリ
+- `packages/core`: コアライブラリ
+- `packages/react`: React アダプター
+- `packages/solid`: Solid アダプター
 - `packages/thc-plugin-merge`: head 統合プラグイン
-- `examples/tanstack-react`: 導入サンプル
+- `examples/tanstack-react`: React 導入サンプル
+- `examples/tanstack-solid`: Solid 導入サンプル
 
 ## ドキュメント更新時の確認
 

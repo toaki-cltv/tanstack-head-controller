@@ -7,7 +7,7 @@ import { readFile } from "fs/promises";
 import path from "path";
 import { type DefaultTheme, defineAdditionalConfig } from "vitepress";
 
-const packageJsonPath = path.join("../packages/tanstack-head-controller/package.json");
+const packageJsonPath = path.join("../package.json");
 const pkg = JSON.parse(await readFile(packageJsonPath, "utf-8"));
 
 export default defineAdditionalConfig({
@@ -110,6 +110,15 @@ function sidebarDocs(): DefaultTheme.SidebarItem[] {
         { text: "THC とは？", link: "what-is-thc" },
         { text: "クイックスタート", link: "getting-started" },
         { text: "使い方", link: "usage" },
+      ],
+    },
+    {
+      text: "ガイド",
+      collapsed: false,
+      items: [
+        { text: "プラグイン", link: "guide/plugins" },
+        { text: "アダプター", link: "guide/adapters" },
+        { text: "高度な使い方", link: "guide/advanced" },
       ],
     },
     {
