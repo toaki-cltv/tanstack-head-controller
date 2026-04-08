@@ -1,7 +1,7 @@
 {
   "name": "@thcjs/core",
   "type": "module",
-  "version": "0.1.1-alpha.0",
+  "version": "0.1.1",
   "description": "Core head controller for TanStack Router.",
   "homepage": "https://thc.tkcl.tv/en/",
   "author": "toakiryu",
