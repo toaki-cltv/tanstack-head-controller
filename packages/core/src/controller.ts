@@ -1,9 +1,9 @@
 import { useSafeHeadCtrlrContext } from "./context/safe.js";
 import { cLogger } from "./lib/logger.js";
 import { applyPlugins } from "./plugins/apply.js";
-import { collectHeadDataFromRoutes } from "./utils/data.js";
-import type { TRoute } from "./types/router.js";
 import type { ControllerResult } from "./types/controller.js";
+import type { TRoute } from "./types/router.js";
+import { collectHeadDataFromRoutes } from "./utils/data.js";
 
 // Loggerの初期化
 const logger = cLogger().getSubLogger({ name: "Controller" });

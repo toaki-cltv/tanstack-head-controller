@@ -1,7 +1,7 @@
 import { useRouterState } from "@tanstack/solid-router";
 import { _controller } from "@thcjs/core";
 import { createComponent } from "solid-js";
-import { HeadRender } from "./render";
+import { HeadRender } from "./render.js";
 
 export function HeadController() {
   const routes = useRouterState({ select: (s) => s.matches })();

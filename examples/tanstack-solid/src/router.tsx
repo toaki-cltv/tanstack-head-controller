@@ -1,8 +1,7 @@
 import { createRouter as createTanStackRouter } from "@tanstack/solid-router";
-import { routeTree } from "./routeTree.gen";
-
 import { createHeadController } from "@thcjs/core";
 import { thcMerge } from "thc-plugin-merge";
+import { routeTree } from "./routeTree.gen";
 
 export function getRouter() {
   const router = createTanStackRouter({

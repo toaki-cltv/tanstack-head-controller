@@ -1,6 +1,6 @@
 import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
-import { readdir, rm } from "node:fs/promises";
+import { readdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -40,11 +40,9 @@ const listPackages = async () => {
     .filter((name) => existsSync(resolve(packagesDir, name, "package.json")));
 };
 
-const buildPackage = async (packageName: string) => {
+const checkPackageImports = async (packageName: string) => {
   const packageDir = resolve(packagesDir, packageName);
   const tsconfigPath = resolve(packageDir, "tsconfig.json");
-  const swcrcPath = resolve(packageDir, ".swcrc");
-  const distDir = resolve(packageDir, "dist");
 
   if (!existsSync(packageDir)) {
     throw new Error(`Package not found: ${packageName}`);
@@ -54,13 +52,7 @@ const buildPackage = async (packageName: string) => {
     throw new Error(`tsconfig.json not found: ${packageName}`);
   }
 
-  if (!existsSync(swcrcPath)) {
-    throw new Error(`.swcrc not found: ${packageName}`);
-  }
-
-  await rm(distDir, { recursive: true, force: true });
-
-  console.log(`[build] ${packageName} - node import checks`);
+  console.log(`[check:imports] ${packageName}`);
   await run(
     "pnpm",
     [
@@ -76,29 +68,6 @@ const buildPackage = async (packageName: string) => {
     ],
     packageDir
   );
-
-  console.log(`\n[build] ${packageName} - swc`);
-  await run(
-    "pnpm",
-    ["exec", "swc", "src", "-d", "dist", "--strip-leading-paths", "--config-file", ".swcrc"],
-    packageDir
-  );
-
-  console.log(`[build] ${packageName} - types`);
-  await run(
-    "pnpm",
-    [
-      "exec",
-      "tsc",
-      "--project",
-      "tsconfig.json",
-      "--emitDeclarationOnly",
-      "--declaration",
-      "--outDir",
-      "dist",
-    ],
-    packageDir
-  );
 };
 
 const main = async () => {
@@ -111,14 +80,14 @@ const main = async () => {
   }
 
   for (const packageName of packages) {
-    await buildPackage(packageName);
+    await checkPackageImports(packageName);
   }
 
-  console.log("\nBuild completed.");
+  console.log("\nImport checks completed.");
 };
 
 main().catch((error) => {
-  console.error("\nBuild failed.");
+  console.error("\nImport checks failed.");
   console.error(error);
   process.exit(1);
 });

@@ -15,6 +15,7 @@
   "keywords": [],
   "scripts": {
     "build": "node ./scripts/build.ts",
+    "check:imports": "node ./scripts/check-imports.ts",
     "publish:thc": "pnpm --filter tanstack-head-controller publish --access public",
     "publish:merge": "pnpm --filter thc-plugin-merge publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,7 +23,7 @@
     "lint:fix": "biome lint --write .",
     "format": "biome format --write .",
     "format:check": "biome format .",
-    "check": "biome check .",
+    "check": "biome check . && pnpm run check:imports",
     "check:fix": "biome check --write .",
     "check:versions": "node scripts/check-versions.js",
     "sync:versions": "node scripts/sync-versions.js",
