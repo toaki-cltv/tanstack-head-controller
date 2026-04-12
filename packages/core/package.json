@@ -56,13 +56,12 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@tanstack/router-core": "^1.168.9",
-    "tslog": "^4.10.2"
+    "@tanstack/router-core": "^1.168.9"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.0",
     "@types/node": "^24.12.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "scripts": {
     "build": "node ../../scripts/build.ts core",

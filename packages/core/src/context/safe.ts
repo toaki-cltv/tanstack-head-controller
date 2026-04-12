@@ -6,10 +6,7 @@
  * 3. コンテキストの使用箇所で、必要なプロパティが存在することを保証する。
  */
 
-import { rLogger } from "./log.js";
 import type { ThcContext } from "./type.js";
-
-const logger = rLogger.getSubLogger({ name: "Safe" });
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
@@ -45,16 +42,14 @@ export function useSafeHeadCtrlrContext(
 
   if (!isRecord(ctx)) {
     if (isThrow) {
-      throw logger.error("Invalid context: Context must be an object.", {
-        receivedType: typeof ctx,
-      });
+      throw new Error("Invalid context: Context must be an object.");
     }
     return null;
   }
 
   if (!("thc" in ctx)) {
     if (isThrow) {
-      throw logger.error("Invalid context: Missing 'thc' property.");
+      throw new Error("Invalid context: Missing 'thc' property.");
     }
     return null;
   }
@@ -63,7 +58,7 @@ export function useSafeHeadCtrlrContext(
 
   if (!isThcContext(thcContext)) {
     if (isThrow) {
-      throw logger.error("Invalid context: 'plugins' must be an array.");
+      throw new Error("Invalid context: 'plugins' must be an array.");
     }
     return null;
   }
