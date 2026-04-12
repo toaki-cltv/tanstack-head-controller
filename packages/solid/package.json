@@ -1,7 +1,7 @@
 {
   "name": "@thcjs/solid",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2-alpha.0",
   "description": "Solid adapter for @thcjs/core with TanStack Solid Router.",
   "homepage": "https://thc.tkcl.tv/en/",
   "author": "toakiryu",
